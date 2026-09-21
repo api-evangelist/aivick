@@ -1,17 +1,20 @@
 aid: aivick
 name: Aivick
-description: 'Aivick is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Aivick株式会社は、食とICTを融合し、個人の健康と豊かな暮らしを支える企業です。パーソナル栄養、ウェルネス支援、無添加食品の開発などを通じて、ITと食のテクノロジーで最適な食事提供を実現します。京都発の宅配食サービスやシステムインテグレーション事業を展開し、健康管理ソリューションを提供しています。'
 url: https://raw.githubusercontent.com/api-evangelist/aivick/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-21 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-09-21'
 modified: '2026-09-21'
 tags:
 - Company
+- FoodTech
+- Health
+- ICT
+- Wellness
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +22,24 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/aivick-domain-security.yml
+- type: LLMsTxt
+  url: llms/aivick-llms.txt
 - type: Website
-  url: https://equityzen.com/company/aivick
+  url: https://aivick.co.jp
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI or other machine-readable contract found on the site or common API endpoints.
+  evidence:
+    - url: https://aivick.co.jp/openapi.json
+      status: 404
+  checked: 2026-09-21
+x-enrichment:
+  date: '2026-09-21'
+  status: enriched
+  artifacts_added: 3
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
